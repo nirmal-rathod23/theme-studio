@@ -1,0 +1,102 @@
+.sidebar {
+  width: 320px;
+  height: 100vh;
+  background-color: var(--surface);
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  padding: calc(var(--spacing-base) * 1.5);
+  border-bottom: 1px solid var(--border);
+}
+
+.header h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.section {
+  padding: calc(var(--spacing-base) * 1.5);
+  border-bottom: 1px solid var(--border);
+}
+
+.section h3 {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--secondary);
+  margin-bottom: var(--spacing-base);
+}
+
+.controlGroup {
+  margin-bottom: var(--spacing-base);
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing-base) * 0.5);
+}
+
+.controlGroup label {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.colorInputWrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-base);
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-global);
+  padding: calc(var(--spacing-base) * 0.5);
+}
+
+.colorInputWrapper input[type="color"] {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  border-radius: calc(var(--radius-global) * 0.5);
+  cursor: pointer;
+  background: none;
+}
+
+.colorInputWrapper span {
+  font-size: 0.875rem;
+  font-family: monospace;
+}
+
+:global(input[type="range"]) {
+  width: 100%;
+  accent-color: var(--primary);
+}
+
+.select {
+  width: 100%;
+  padding: calc(var(--spacing-base) * 0.5);
+  border-radius: var(--radius-global);
+  border: 1px solid var(--border);
+  background: var(--background);
+  color: var(--text);
+  font-family: inherit;
+  margin-top: calc(var(--spacing-base) * 0.5);
+}
+
+.exportBtn {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: calc(var(--spacing-base) * 0.5) calc(var(--spacing-base) * 1);
+  border-radius: var(--radius-global);
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+  flex: 1;
+  text-align: center;
+}
+
+.exportBtn:hover {
+  background: var(--border);
+}

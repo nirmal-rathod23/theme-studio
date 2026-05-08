@@ -1,0 +1,146 @@
+.preview {
+  flex: 1;
+  height: 100vh;
+  overflow-y: auto;
+  background-color: var(--background);
+  padding: calc(var(--spacing-base) * 2);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.mockApp {
+  width: 100%;
+  max-width: 1000px;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-global);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.mockHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-base) calc(var(--spacing-base) * 2);
+  border-bottom: 1px solid var(--border);
+  background-color: var(--surface);
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--primary);
+}
+
+.nav {
+  display: flex;
+  gap: calc(var(--spacing-base) * 2);
+}
+
+.nav a {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text);
+  opacity: 0.8;
+}
+
+.nav a:hover {
+  opacity: 1;
+  color: var(--primary);
+}
+
+.buttonPrimary {
+  background-color: var(--primary);
+  color: #ffffff; /* Typically primary has white text, but should be dynamic */
+  border: none;
+  padding: calc(var(--spacing-base) * 0.75) calc(var(--spacing-base) * 1.5);
+  border-radius: var(--radius-global);
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.buttonPrimary:hover {
+  opacity: 0.9;
+}
+
+.buttonSecondary {
+  background-color: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: calc(var(--spacing-base) * 0.75) calc(var(--spacing-base) * 1.5);
+  border-radius: var(--radius-global);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.buttonSecondary:hover {
+  background-color: var(--border);
+}
+
+.mockContent {
+  padding: calc(var(--spacing-base) * 3);
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: calc(var(--spacing-base) * 4);
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-base);
+  color: var(--text);
+}
+
+.hero p {
+  font-size: 1.125rem;
+  color: var(--secondary);
+  max-width: 600px;
+  margin: 0 auto calc(var(--spacing-base) * 2);
+}
+
+.actions {
+  display: flex;
+  gap: var(--spacing-base);
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: calc(var(--spacing-base) * 2);
+}
+
+.card {
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-global);
+  padding: calc(var(--spacing-base) * 1.5);
+  box-shadow: var(--shadow-sm);
+}
+
+.card h3 {
+  font-size: 0.875rem;
+  color: var(--secondary);
+  margin-bottom: calc(var(--spacing-base) * 0.5);
+}
+
+.stat {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: calc(var(--spacing-base) * 0.5);
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  background-color: rgba(37, 99, 235, 0.1); /* Static for now, can map to dynamic rgba */
+  color: var(--primary);
+  padding: 4px 8px;
+  border-radius: calc(var(--radius-global) * 0.5);
+  font-weight: 500;
+}
