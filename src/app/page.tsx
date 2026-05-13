@@ -1,11 +1,10 @@
-import EditorSidebar from '@/components/EditorSidebar';
+import Sidebar from '@/components/Sidebar';
 import PreviewArea from '@/components/PreviewArea';
-import styles from './page.module.css';
 
 export default function Home() {
   return (
-    <div className={styles.layout}>
-      <EditorSidebar />
+    <div style={{ display: 'flex', width: '100vw', height: '100vh', overflow: 'hidden' }}>
+      <Sidebar />
       <PreviewArea />
     </div>
   );

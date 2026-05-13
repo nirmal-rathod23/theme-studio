@@ -1,0 +1,277 @@
+/* ═══════════════════════════════════════════════════════════════════
+   FontSelect — Searchable Google Fonts Dropdown
+   ═══════════════════════════════════════════════════════════════════ */
+
+.fontSelect {
+  position: relative;
+  margin-bottom: var(--studio-gap-md);
+}
+
+.fontLabel {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--studio-text-secondary);
+  margin-bottom: var(--studio-gap-xs);
+}
+
+/* ─── Trigger button ─────────────────────────────────────────────── */
+.fontTrigger {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+  background: var(--studio-bg);
+  border: 1px solid var(--studio-border);
+  border-radius: var(--studio-radius-sm);
+  cursor: pointer;
+  transition: all var(--studio-transition);
+  gap: 8px;
+}
+
+.fontTrigger:hover {
+  border-color: var(--studio-accent);
+}
+
+.fontPreviewText {
+  flex: 1;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--studio-text);
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fontCategory {
+  font-size: 0.6rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--studio-text-muted);
+  padding: 2px 6px;
+  background: var(--studio-surface-2);
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.fontChevron {
+  font-size: 0.65rem;
+  color: var(--studio-text-muted);
+  transition: transform var(--studio-transition);
+  flex-shrink: 0;
+}
+
+.fontChevron.open {
+  transform: rotate(180deg);
+}
+
+/* ─── Dropdown panel ─────────────────────────────────────────────── */
+.dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: var(--studio-surface);
+  border: 1px solid var(--studio-border);
+  border-radius: var(--studio-radius-md);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+  z-index: 200;
+  animation: fontDropIn 150ms ease;
+  overflow: hidden;
+}
+
+@keyframes fontDropIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ─── Search ─────────────────────────────────────────────────────── */
+.searchWrap {
+  display: flex;
+  align-items: center;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--studio-border);
+  gap: 6px;
+}
+
+.searchIcon {
+  font-size: 0.85rem;
+  color: var(--studio-text-muted);
+  flex-shrink: 0;
+}
+
+.searchInput {
+  flex: 1;
+  height: 28px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 0.8rem;
+  color: var(--studio-text);
+  font-family: inherit;
+}
+
+.searchInput::placeholder {
+  color: var(--studio-text-muted);
+}
+
+.searchClear {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  color: var(--studio-text-muted);
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: all var(--studio-transition);
+  flex-shrink: 0;
+}
+
+.searchClear:hover {
+  background: var(--studio-surface-2);
+  color: var(--studio-text);
+}
+
+/* ─── Category tabs ──────────────────────────────────────────────── */
+.categoryTabs {
+  display: flex;
+  padding: 6px 8px;
+  gap: 3px;
+  border-bottom: 1px solid var(--studio-border);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.categoryTabs::-webkit-scrollbar {
+  display: none;
+}
+
+.catTab {
+  padding: 4px 8px;
+  border-radius: 10px;
+  font-size: 0.62rem;
+  font-weight: 500;
+  color: var(--studio-text-muted);
+  background: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--studio-transition);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.catTab:hover {
+  color: var(--studio-accent);
+  border-color: var(--studio-accent);
+}
+
+.catTab.active {
+  background: var(--studio-accent-muted);
+  border-color: var(--studio-accent);
+  color: var(--studio-accent-hover);
+}
+
+/* ─── Font count ─────────────────────────────────────────────────── */
+.fontCount {
+  padding: 4px 12px;
+  font-size: 0.6rem;
+  color: var(--studio-text-muted);
+  font-family: var(--studio-font-mono);
+}
+
+/* ─── Font list ──────────────────────────────────────────────────── */
+.fontList {
+  max-height: 280px;
+  overflow-y: auto;
+  padding: 4px;
+}
+
+.fontList::-webkit-scrollbar {
+  width: 5px;
+}
+
+.fontList::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.fontList::-webkit-scrollbar-thumb {
+  background: var(--studio-border);
+  border-radius: 3px;
+}
+
+.fontList::-webkit-scrollbar-thumb:hover {
+  background: var(--studio-text-muted);
+}
+
+/* ─── Font item ──────────────────────────────────────────────────── */
+.fontItem {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: var(--studio-radius-sm);
+  cursor: pointer;
+  transition: background var(--studio-transition);
+  gap: 8px;
+  background: none;
+  border: none;
+  text-align: left;
+}
+
+.fontItem:hover,
+.fontItem.highlighted {
+  background: var(--studio-surface-2);
+}
+
+.fontItem.selected {
+  background: var(--studio-accent-muted);
+}
+
+.fontItemName {
+  flex: 1;
+  font-size: 0.85rem;
+  color: var(--studio-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fontItem.selected .fontItemName {
+  color: var(--studio-accent-hover);
+  font-weight: 600;
+}
+
+.fontItemCategory {
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--studio-text-muted);
+  flex-shrink: 0;
+}
+
+.fontItemCheck {
+  font-size: 0.7rem;
+  color: var(--studio-accent);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* ─── Empty state ────────────────────────────────────────────────── */
+.emptyState {
+  padding: 24px 16px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--studio-text-muted);
+}
