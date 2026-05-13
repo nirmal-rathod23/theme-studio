@@ -165,7 +165,6 @@ const DEFAULT_HARMONY: HarmonyMode = 'analogous';
 
 const initialTokens: ThemeTokens = {
   mode: 'light',
-  colorOverrides: { ...EMPTY_OVERRIDES },
   ...buildTokens(DEFAULT_PRIMARY, DEFAULT_HARMONY, DEFAULT_PERSONALITY),
 };
 
