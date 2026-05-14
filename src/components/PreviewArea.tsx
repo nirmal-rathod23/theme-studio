@@ -265,7 +265,7 @@ function FooterPreview() {
       </div>
       <div className={s.pFooterBottom}>
         <span>© 2026 BrandUI. All rights reserved.</span>
-        <span>Crafted with Theme Studio</span>
+        <span>Crafted By <a href="https://www.linkedin.com/in/nirmal-rathod23/">Nirmal Rathod</a> </span>
       </div>
     </div>
   );
